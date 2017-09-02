@@ -12,7 +12,7 @@ var gutil = require("gulp-util");
 var jshint = require("gulp-jshint");
 var jshintStylish = require("jshint-stylish");
 // var karma = require("karma").server;
-var Server = require("karma").Server;
+// var Server = require("karma").Server;
 var merge = require("merge-stream");
 var prettyTime = require("pretty-hrtime");
 var rename = require("gulp-rename");
@@ -23,7 +23,7 @@ var sourcemaps = require("gulp-sourcemaps");
 var uglify = require("gulp-uglify-es").default;
 var watch = require("gulp-watch");
 var watchify = require("watchify");
-var phantom = require("gulp-phantom");
+// var phantom = require("gulp-phantom");
 
 var BUILD_DIR = "build";
 var BUILD_DIST_DIR = "build/dist";
@@ -46,11 +46,10 @@ gulp.task("demo:watch", ["demo:build"], function() {
 });
 
 gulp.task("demo:test", ["demo:build"], function() {
-    return gulp.src("test/demo-test.js")
-        // .pipe(shell("phantomjs <%= (file.path) %>"));
-        .pipe(phantom({
-            ext: ".json"
-        }))
+    // return gulp.src("test/demo-test.js")
+    //     .pipe(phantom({
+    //         ext: ".json"
+    //     }))
 });
 
 gulp.task("js:build", function() {
@@ -62,16 +61,16 @@ gulp.task("js:watch", function() {
 });
 
 gulp.task("js:test", ["js:build"], function(cb) {
-    karmaSingleRun(__dirname + "/karma.conf.js", cb);
+    // karmaSingleRun(__dirname + "/karma.conf.js", cb);
 });
 
 gulp.task("js:test:watch", ["js:build"], function(cb) {
-    karma.start({
-        configFile: __dirname + "/karma.conf.js",
-        singleRun: false,
-        browsers: ["PhantomJS"]
-    });
-    cb();
+    // karma.start({
+    //     configFile: __dirname + "/karma.conf.js",
+    //     singleRun: false,
+    //     browsers: ["PhantomJS"]
+    // });
+    // cb();
 });
 
 gulp.task("core-js:build", function() {
@@ -83,7 +82,7 @@ gulp.task("core-js:build", function() {
 });
 
 gulp.task("core-js:test", ["core-js:build"], function(cb) {
-    karmaSingleRun(__dirname + "/karma.core.conf.js", cb);
+    // karmaSingleRun(__dirname + "/karma.core.conf.js", cb);
 });
 
 gulp.task("version:build", function() {
@@ -130,20 +129,11 @@ gulp.task("clean", function(cb) {
 gulp.task("default", ["build"]);
 
 function karmaSingleRun(conf, cb) {
-    // var args = {
+    // const server = new Server({
     //     configFile: conf,
-    //     singleRun: true
-    // };
-
-    // if (process.env.BROWSERS) {
-    //     args.browsers = process.env.BROWSERS.split(",");
-    // }
-    // karma.start(args, cb);
-    const server = new Server({
-        configFile: conf,
-        singleRun: true,
-    }, cb)
-    server.start()
+    //     singleRun: true,
+    // }, cb)
+    // server.start()
 }
 
 function makeJsBundleTask(watch) {
