@@ -1,5 +1,5 @@
 {
-  "name": "dagre-d3",
+  "name": "@cartok/dagre-d3",
   "version": "0.4.18",
   "description": "A D3-based renderer for Dagre",
   "author": "Chris Pettitt <chris@samsarin.com>",
@@ -11,7 +11,8 @@
   ],
   "scripts": {
     "upgrade": "ncu -ua && yarn upgrade",
-    "build": "node_modules/.bin/gulp dist"
+    "build": "node_modules/.bin/gulp dist",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "d3": "4.10.0",
