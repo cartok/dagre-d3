@@ -1,6 +1,6 @@
 {
   "disallowSpaceAfterPrefixUnaryOperators": true,
-  "disallowTrailingWhitespace": true,
+  "disallowTrailingWhitespace": false,
   "maximumLineLength": 100,
   "validateQuoteMarks": true
 }
