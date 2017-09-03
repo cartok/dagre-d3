@@ -13,3 +13,7 @@ For more details, including examples and configuration options, please see our
 
 dagre-d3 is licensed under the terms of the MIT License. See the LICENSE file
 for details.
+
+
+Build Dependencies:
+- install phantomjs for your system.
