@@ -9,8 +9,8 @@ var del = require("del");
 var fs = require("fs");
 var gulp = require("gulp");
 var gutil = require("gulp-util");
-var jshint = require("gulp-jshint");
-var jshintStylish = require("jshint-stylish");
+// var jshint = require("gulp-jshint");
+// var jshintStylish = require("jshint-stylish");
 // var karma = require("karma").server;
 // var Server = require("karma").Server;
 var merge = require("merge-stream");
@@ -170,21 +170,22 @@ function makeBundleTask(src, name, watch, args) {
             .pipe(sourcemaps.write("./"))
             .pipe(gulp.dest(BUILD_DIST_DIR));
 
-        var lintStream;
-        if (changedFiles) {
-            lintStream = gulp.src(changedFiles);
-        } else {
-            lintStream = gulp.src(["index.js", "lib/**/*.js"]);
-        }
+        // var lintStream;
+        // if (changedFiles) {
+        //     lintStream = gulp.src(changedFiles);
+        // } else {
+        //     lintStream = gulp.src(["index.js", "lib/**/*.js"]);
+        // }
 
-        lintStream = lintStream
-            .pipe(jshint())
-            .pipe(jshint.reporter(jshintStylish));
-        if (!watch) {
-            lintStream = lintStream.pipe(jshint.reporter("fail"));
-        }
+        // lintStream = lintStream
+        //     .pipe(jshint())
+        //     .pipe(jshint.reporter(jshintStylish));
+        // if (!watch) {
+        //     lintStream = lintStream.pipe(jshint.reporter("fail"));
+        // }
 
-        return merge(lintStream, compileStream);
+        // return merge(lintStream, compileStream);
+        return compileStream;
     }
 
     if (watch) {
