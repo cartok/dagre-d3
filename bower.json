@@ -1,6 +1,6 @@
 {
   "name": "@cartok/dagre-d3",
-  "version": "0.4.49",
+  "version": "0.4.50",
   "main": [
     "dist/@cartok/dagre-d3.core.js"
   ],
