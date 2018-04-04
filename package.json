@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "upgrade": "ncu -ua && yarn upgrade",
-    "build": "node_modules/.bin/gulp dist",
+    "build": "npm insall && node_modules/.bin/gulp dist",
     "prepublish": "npm run build"
   },
   "dependencies": {
