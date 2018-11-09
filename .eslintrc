@@ -1,19 +1,11 @@
 {
     "env": {
         "browser": true,
-        "worker": true,
-        "jquery": true,
-        "es6": true,
-        "node": true
-    },
-    "globals": {
-        "Observe": true,
-        "Cookies": true
+        "es6": true
     },
     "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
-            "jsx": true,
             "impliedStrict": true
         },
         "ecmaVersion": 6,
@@ -24,7 +16,7 @@
         "no-this-before-super": "warn",
         "no-undef": "warn",
         "no-unreachable": "warn",
-        "no-unused-vars": "off",
+        "no-unused-vars": "warn",
         "constructor-super": "warn",
         "valid-typeof": "warn",
         "flowtype/boolean-style": [2, "boolean"],
